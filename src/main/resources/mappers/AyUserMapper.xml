@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.AyUserDao" >
+
+    <resultMap id="UserResultMap" type="com.example.demo.model.AyUser">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="mail" property="mail" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="findByNameAndPassword" resultMap="UserResultMap" parameterType="String">
+        select * from ay_user u
+        <where>
+            u.name = #{name}
+            and u.password = #{password}
+        </where>
+    </select>
+
+</mapper>
