@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- 引入 Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 页面显示部分-->
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading text-center">
+            <h1>秒杀活动</h1>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <td>图片</td>
+                    <td>名称</td>
+                    <td>库存</td>
+                    <td>开始时间</td>
+                    <td>结束时间</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="product:${products}">
+                    <td><img border="1px" width="100px" height="110px"
+                             th:src="@{${product.productImg}}"/></td>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.number}"></td>
+                    <td th:text="${product.startTime}"></td>
+                    <td th:text="${product.endTime}"></td>
+                    <td>
+                        <!-- 发起秒杀请求，用户id先简单写死为 1 -->
+                        <a class="btn btn-info" th:href="@{'/products/'+${product.id} + '/kill' + '?userId=1'}">秒杀</a>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>

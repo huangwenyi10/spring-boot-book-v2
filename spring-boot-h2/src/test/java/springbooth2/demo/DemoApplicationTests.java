@@ -21,27 +21,27 @@ public class DemoApplicationTests {
     @Resource
     private UserRepository userRepository;
 
-    @Test
-    public void testSave() throws Exception {
-        User user = new User();
-        user.setName("ay");
-        user.setUrl("https://huangwenyi.com");
-        User result = userRepository.save(user);
-        Assertions.assertThat(result).isNotNull();
-    }
-
-    @Test
-    public void testFindOne() throws Exception{
-        User user = userRepository.findById(1L).get();
-        Assertions.assertThat(user).isNotNull();
-        Assertions.assertThat(user.getId()).isEqualTo(1);
-    }
-
-    @Test
-    public void testFindByName() throws Exception{
-        User user = userRepository.findByName("ay");
-        Assertions.assertThat(user).isNotNull();
-        Assertions.assertThat(user.getName()).isEqualTo("ay");
-    }
+//    @Test
+//    public void testSave() throws Exception {
+//        User user = new User();
+//        user.setName("ay");
+//        user.setUrl("https://huangwenyi.com");
+//        User result = userRepository.save(user);
+//        Assertions.assertThat(result).isNotNull();
+//    }
+//
+//    @Test
+//    public void testFindOne() throws Exception{
+//        User user = userRepository.findById(1L).get();
+//        Assertions.assertThat(user).isNotNull();
+//        Assertions.assertThat(user.getId()).isEqualTo(1);
+//    }
+//
+//    @Test
+//    public void testFindByName() throws Exception{
+//        User user = userRepository.findByName("ay");
+//        Assertions.assertThat(user).isNotNull();
+//        Assertions.assertThat(user.getName()).isEqualTo("ay");
+//    }
 
 }
