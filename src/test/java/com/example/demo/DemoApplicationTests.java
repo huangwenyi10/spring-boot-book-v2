@@ -4,6 +4,7 @@ import com.example.demo.model.AyMood;
 import com.example.demo.model.AyUser;
 import com.example.demo.model.AyUserAttachmentRel;
 import com.example.demo.producer.AyMoodProducer;
+import com.example.demo.properties.BookProperties;
 import com.example.demo.service.AyMoodService;
 import com.example.demo.service.AyUserAttachmentRelService;
 import com.example.demo.service.AyUserService;
@@ -256,4 +257,13 @@ public class DemoApplicationTests {
 //        System.out.println("保存成功");
 //    }
 
+
+    @Resource
+    private BookProperties bookProperties;
+
+    @Test
+    public void testProperties(){
+        System.out.println(bookProperties.getBookName());
+        System.out.println(bookProperties.getAuthor());
+    }
 }

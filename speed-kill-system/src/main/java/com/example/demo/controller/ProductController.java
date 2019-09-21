@@ -1,5 +1,4 @@
 package com.example.demo.controller;
-
 import com.example.demo.model.AyProduct;
 import com.example.demo.service.ProductService;
 import org.springframework.stereotype.Controller;

@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.error.BusinessException;
 import com.example.demo.model.AyUser;
+import com.example.demo.properties.BookProperties;
 import com.example.demo.service.AyUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/ayUser")
 public class AyUserController {
+
+    @Resource
+    private BookProperties bookProperties;
 
     @Resource
     private AyUserService ayUserService;
